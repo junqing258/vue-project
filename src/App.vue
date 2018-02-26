@@ -40,7 +40,9 @@ export default {
       msg: "Welcome to Your Vue.js App"
     };
   },
-  created() {},
+  created() {
+
+  },
   mounted() {
     // this.$refs.wrap.style.height = px2rem(window.innerHeight) - 1.4 + "rem";
   },
@@ -53,14 +55,6 @@ export default {
 </script>
 
 <style lang="scss">
-body,
-div,
-span,
-ul {
-  margin: 0;
-  border: none;
-  padding: 0;
-}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -126,6 +120,7 @@ ul {
       margin: 0.01rem 0 0 0;
       font-weight: normal;
     }
+
   }
 
   .router-link-active {

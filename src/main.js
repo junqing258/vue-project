@@ -1,3 +1,4 @@
+import "./assets/style.scss";
 import App from './App.vue'
 import Foo from './Foo.vue'
 import Bar from './Bar.vue'
