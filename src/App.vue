@@ -14,6 +14,7 @@
         </transition>
     </div>
     
+    <div style="height: 1.3rem"></div>
     <div class="footbar">
        <router-link to="/bar">
             <img src="./assets/wxb.png" alt="">
