@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>vue-project</title>
+    <script type="text/javascript">
+        !function() {
+            var t, e = document.getElementsByTagName("html")[0],
+                n = function() {
+                    var n = e.getBoundingClientRect().width;
+                    n = (n = Math.round(n)) > 750 ? 750 : n, t = window.rem = Math.ceil(n / 750 * 200) / 2, e.style.fontSize = t + "px"
+                };
+            n();
+            var r;
+            window.addEventListener("resize", function() {
+                clearTimeout(r), r = setTimeout(n, 300)
+            }), window.rem2px = function(e) {
+                var n = parseFloat(e) * t;
+                return "string" == typeof e && e.match(/rem$/) && (n += "px"), n
+            }, window.px2rem = function(e) {
+                var n = parseFloat(e) / t;
+                return "string" == typeof e && e.match(/px$/) && (n += "rem"), n
+            }
+        }();
+    </script>
+    <!-- <script src="/dist/flexible.js"></script> -->
+  </head>
+  <body>
+    <div id="app"></div>
+    <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css" rel="stylesheet">
+  	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="/dist/build.js"></script>
+  </body>
+</html>
