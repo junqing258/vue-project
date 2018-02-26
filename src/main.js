@@ -1,20 +1,20 @@
 import App from './App.vue'
 import Foo from './Foo.vue'
 import Bar from './Bar.vue'
-
-/*const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<div>bar</div>' }*/
+import Game from './Game.vue'
 
 const routes = [
-	{ path: '/', redirect: '/bar' },
-  	{ path: '/foo', component: Foo },
-  	{ path: '/bar', component: Bar }
-]
+  { path: '/', redirect: '/bar' },
+  { path: '/game', component: Game },
+  { path: '/foo', component: Foo },
+  { path: '/bar', component: Bar }
+];
 
-const router = new VueRouter({ routes })
+// Vue.use(VueLazyload);
+Vue.use(VueScroller);
 
 new Vue({
   el: '#app',
-  router: router,
+  router: new VueRouter({ routes }),
   render: h => h(App)
 })

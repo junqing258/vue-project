@@ -1,20 +1,27 @@
+
 <template>
   <div id="app">
-    <!--  -->
-        <img src="./assets/logo.png" style="width:2.0rem; height:2.0rem;" />
-        <h1>{{ msg }}</h1>
-        <h2 @click="handleClick">Ecosystem</h2>
-        <div id="wrap" ref="wrap" style="display: flex">
-          <transition mode="in-out" :duration="250"
-            enter-active-class="animated slideInRight" > <!-- :duration="{ enter: 2000, leave: 1000 }" leave-active-class="animated slideOutLeft" -->
+    <img src="./assets/logo.png" 
+        style="width:1.0rem; height:1.0rem; margin: 0.2rem;" 
+        @click="handleClick"/>
+    <h1>{{ msg }}</h1>
+    <h2 >Ecosystem</h2>
+    <div id="wrap" ref="wrap" style="display: flex">
+        <transition mode="in-out" :duration="250"
+            enter-active-class="animated fadeIn" 
+            leave-active-class="animated fadeOut">
             <router-view></router-view>
-          </transition>
-        </div>
+        </transition>
+    </div>
     
     <div class="footbar">
-       <router-link to="/bar" class="blue">
+       <router-link to="/bar">
             <img src="./assets/wxb.png" alt="">
             <h3>Bar</h3>
+        </router-link>
+        <router-link to="/game">
+            <img src="./assets/game.png" alt="">
+            <h3>Game</h3>
         </router-link>
         <router-link to="/foo">
             <img src="./assets/yiqiyibiao.png" alt="">
@@ -27,56 +34,61 @@
 
 <script>
 export default {
-    name: 'app',
-    data () {
-        return {
-            msg: 'Welcome to Your Vue.js App'
-        }
-    },
-    created () {
-        
-    },
-    mounted () {
-        // this.$refs.wrap.style.height = px2rem(window.innerHeight) - 1.4 + "rem";
-    },
-    methods: {
-        handleClick: function() {
-            alert("1")
-        }
+  name: "app",
+  data() {
+    return {
+      msg: "Welcome to Your Vue.js App"
+    };
+  },
+  created() {},
+  mounted() {
+    // this.$refs.wrap.style.height = px2rem(window.innerHeight) - 1.4 + "rem";
+  },
+  methods: {
+    handleClick: function() {
+      alert("1");
     }
-}
+  }
+};
 </script>
 
 <style lang="scss">
-body, div, span, ul { margin: 0; border: none; padding: 0; }
+body,
+div,
+span,
+ul {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   width: 100%;
-  font-size: .16rem;
+  font-size: 0.16rem;
   overflow-x: hidden;
   -webkit-tap-highlight-color: none;
 }
 
 #wrap {
-    width: 100%;
-    overflow-x: hidden;
-    display: flex;
-    position: relative;
-    justify-content: flex-start;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
 
-    > div {
-      flex-shrink: 0;
-      &:nth-child(1){ z-index: 1; }
-      &:nth-child(2){ z-index: 10;  } 
+  > div {
+    flex-shrink: 0;
+    &:nth-child(1) {
+      z-index: 1;
     }
-}
-
-h1, h2 {
-  font-weight: normal;
+    &:nth-child(2) {
+      z-index: 10;
+    }
+  }
 }
 
 ul {
@@ -85,42 +97,50 @@ ul {
 }
 
 .footbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    width:100%;
-    height: 1.3rem;
-    background-color: #fff;
-    box-shadow:0rem -0.03rem 0.20rem rgba(0,0,0,0.5);
-    z-index: 9;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 1.3rem;
+  background-color: #fff;
+  box-shadow: 0rem -0.03rem 0.2rem rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  user-select: none;
 
-    & > a {
-        display: block;
-        margin: 0.02rem 0;
-        font-size: 0.28rem;
-        min-width: 20%;
-        text-decoration: none;
+  & > a {
+    display: block;
+    margin: 0.02rem 0;
+    font-size: 0.28rem;
+    min-width: 20%;
+    text-decoration: none;
 
-        img { width: 0.48rem; height: 0.48rem; }
-
-        h3 {
-            color: #2c2c2c;
-            margin: 0.01rem 0 0 0;
-            font-weight: normal;
-        }
+    img {
+      width: 0.48rem;
+      height: 0.48rem;
     }
 
-    .router-link-active { 
-      img { transform: scale(1.2, 1.2) }
-      h3 { font-weight: bold; }
+    h3 {
+      color: #2c2c2c;
+      margin: 0.01rem 0 0 0;
+      font-weight: normal;
     }
+  }
+
+  .router-link-active {
+    img {
+      transform: scale(1.2, 1.2);
+    }
+    h3 {
+      font-weight: bold;
+    }
+  }
 }
 
 li {
   display: inline-block;
-  margin: 0 0.10rem;
+  margin: 0 0.1rem;
 }
 
 a {
@@ -128,9 +148,10 @@ a {
 }
 
 .page {
-    margin: 0 auto;
-    width: 100%;
-    height: 10.0rem;
-    background-color: #41B883;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 10rem;
+  background-color: #41b883;
 }
 </style>
