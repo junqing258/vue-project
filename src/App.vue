@@ -34,6 +34,10 @@
 </template>
 
 <script>
+import Foo from './components/Foo.vue'
+import Bar from './components/Bar.vue'
+import Game from './components/Game.vue'
+
 export default {
   name: "app",
   data() {
@@ -54,6 +58,14 @@ export default {
     }
   }
 };
+
+export const routes = [
+  { path: '/', redirect: '/bar' },
+  { path: '/game', component: Game },
+  { path: '/foo', component: Foo },
+  { path: '/bar', component: Bar }
+];
+
 </script>
 
 <style lang="scss">
