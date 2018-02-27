@@ -3,7 +3,7 @@
 		<scroller class="list" ref="view_scroller"
 				:on-infinite="infinite"
 				:snapping="true"
-				style="height: 10rem">
+        :snap-height="50">
 			<div v-for="(g, i) in groups" :key="i" class="row">
           <span v-for="(n, j) in g" :key="j" class="item">
             <img :src=" `./dist/6067/file${n%18+1}.png` " alt=""
