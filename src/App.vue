@@ -45,7 +45,8 @@ export default {
 
   },
   mounted() {
-    // this.$refs.wrap.style.height = px2rem(window.innerHeight) - 1.4 + "rem";
+    let $wrap = this.$refs.wrap;
+    $wrap.style.height = px2rem(window.innerHeight- $wrap.offsetTop) - 1.3 + "rem";
   },
   methods: {
     handleClick: function() {
@@ -147,7 +148,7 @@ a {
   position: relative;
   margin: 0 auto;
   width: 100%;
-  height: 10rem;
+  height: 100%;
   background-color: #41b883;
 }
 </style>
